@@ -27,7 +27,7 @@ const Cart: React.FC<CartProps> = () => {
     useCartContext();
 
   const itemCount = cart.reduce(
-    (total, product) => total + product.quantity,
+    (total, product) => total + (product.quantity ?? 0),
     0,
   );
 

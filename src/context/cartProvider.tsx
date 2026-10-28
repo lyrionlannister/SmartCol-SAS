@@ -23,7 +23,7 @@ function CartProvider({ children }: CartProviderProps): React.ReactElement {
     const updatedCart = cart.some((item) => item.name === product.name)
       ? cart.map((item) =>
           item.name === product.name
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: (item.quantity ?? 0) + 1 }
             : item,
         )
       : [...cart, product];
